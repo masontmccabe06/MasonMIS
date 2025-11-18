@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason McCabe - Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        /* Critical styles to prevent FOUC */
+        body {
+            margin: 0;
+            background-color: #ffffff; /* Pure white */
+        }
+        .header {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .header.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="name">Mason McCabe</div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="discover.html">Discover UMD</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="game.html">Game</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-root">
+        <div class="welcome-section">
+            <!-- Circular headshot at top center -->
+            <div class="headshot-container">
+                <img src="images/headshot.JPG" alt="Mason McCabe headshot" class="headshot-circle">
+            </div>
+
+            <h1>Hello, I'm Mason. Welcome to my website.</h1>
+            <!-- lead paragraph removed -->
+
+            <!-- job callout removed -->
+
+            <div class="video-section">
+                <video class="intro-video" controls width="100%">
+                    <source src="videos/IMG_7206.MOV" type="video/quicktime">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="video-caption">Intro Video</p>
+            </div>
+
+            <div class="overview-list" role="list">
+                <a role="listitem" class="card full" href="hobbies.html">
+                    <h3>Hobbies</h3>
+                    <p>Sports (baseball, hockey, basketball): I enjoy the teamwork and competition. Weightlifting keeps me disciplined and goal-focused. Time on the lake with family is my favorite way to recharge.</p>
+                    
+                    <div class="hobbies-images">
+                        <img src="images/sport1.JPG" alt="Sports activity 1" class="hobby-image">
+                        <img src="images/sport2.JPEG" alt="Sports activity 2" class="hobby-image">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Mason McCabe. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <style>
+        /* Ensure the footer sits at the bottom center of the viewport */
+        .site-root{min-height:calc(100vh);display:flex;flex-direction:column}
+        .welcome-section{max-width:1100px;margin:3rem auto;padding:1rem;text-align:center}
+        .lead{color:#4b5563}
+    .overview-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;align-items:stretch}
+    .card{display:block;text-align:left;padding:1.15rem 1.25rem;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfbff);box-shadow:0 6px 18px rgba(16,24,40,0.06);color:inherit;text-decoration:none;border-left:6px solid #6fb3ff}
+    .card.full{width:100%}
+        .card h3{margin:.1rem 0 .25rem}
+        .card p{margin:0;color:#374151;font-size:.95rem}
+        .site-footer{margin-top:auto;padding:1.25rem 0;text-align:center}
+        .site-footer p{margin:0;color:#6b7280}
+        /* circular headshot styling */
+        .headshot-container{margin:0 auto 1.5rem;display:flex;justify-content:center}
+        .headshot-circle{width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 10px 40px rgba(16,24,40,0.15);border:4px solid #ffffff}
+        /* video section styling */
+        .video-section{margin:1.5rem auto;max-width:300px;text-align:center}
+        .intro-video{width:100%;max-width:300px;height:auto;border-radius:8px;box-shadow:0 8px 30px rgba(16,24,40,0.12)}
+        .video-caption{margin:0.75rem 0 0;color:#6b7280;font-size:0.95rem;font-weight:500}
+        /* hobbies images styling */
+        .hobbies-images{display:flex;gap:1rem;margin-top:1rem;justify-content:center;flex-wrap:wrap;width:100%;max-width:none}
+        .hobby-image{flex:1;min-width:200px;height:auto;aspect-ratio:16/9;border-radius:8px;object-fit:cover;box-shadow:0 6px 20px rgba(16,24,40,0.1);transition:transform 0.3s ease}
+        .hobby-image:hover{transform:scale(1.02)}
+        @media (max-width:420px){.overview-grid{grid-template-columns:1fr}.headshot-circle{width:120px;height:120px}.hobby-image{width:100px;height:100px}}
+    </style>
+
+    <script>
+        // Add 'loaded' class to header after page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.header').classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

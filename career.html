@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        /* Critical styles to prevent FOUC */
+        body {
+            margin: 0;
+            background-color: #ffffff;
+        }
+        .header {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .header.loaded {
+            opacity: 1;
+        }
+        /* page styles */
+        .career-container{max-width:1000px;margin:3rem auto;padding:0 1rem}
+        .qualifications-box{background:linear-gradient(180deg,#f0f6ff,#fbfbff);border-radius:12px;padding:2rem;box-shadow:0 6px 18px rgba(16,24,40,0.06);margin-bottom:2rem;border-left:6px solid #6fb3ff}
+        .qualifications-box h2{margin:0 0 1rem;font-size:1.5rem;color:#0b1720}
+        .qualifications-box ul{margin:0;padding-left:1.5rem;color:#263238;line-height:1.8}
+        .qualifications-box li{margin-bottom:0.5rem}
+        .firms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;margin-top:2rem}
+        .firm-card{background:linear-gradient(180deg,#ffffff,#fbfbff);border-radius:12px;padding:2rem;box-shadow:0 8px 30px rgba(16,24,40,0.07);border-top:6px solid #6fb3ff}
+        .firm-logo{width:120px;height:80px;background:linear-gradient(135deg,#6fb3ff,#90caf9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:#ffffff;margin-bottom:1rem}
+        .firm-name{font-size:1.35rem;font-weight:700;color:#0b1720;margin:0 0 0.5rem}
+        .firm-contact{background:rgba(111,179,255,0.08);border-radius:8px;padding:1rem;margin:1rem 0;font-size:0.9rem;line-height:1.6;color:#263238}
+        .firm-contact strong{color:#0b1720;display:block;margin-bottom:0.25rem}
+        .firm-interest{margin:1rem 0;font-size:0.95rem;line-height:1.7;color:#263238}
+        .firm-interest h3{margin:0.75rem 0 0.5rem;font-size:1.05rem;color:#0b1720}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="name">Mason McCabe</div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="discover.html">Discover UMD</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="game.html">Game</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="career-container">
+        <h1 style="text-align:center;color:#0b1720;margin-bottom:0.5rem;">Career</h1>
+        <p style="text-align:center;color:#6b7280;margin-bottom:2rem;">Target companies and opportunities in the Twin Cities marketing landscape.</p>
+
+        <div class="qualifications-box">
+            <h2>My Qualifications</h2>
+            <ul>
+                <li><strong>Education:</strong> 6 years of graphic design experience with a strong portfolio of visual design and brand development work.</li>
+                <li><strong>Current Role:</strong> Marketing Manager for a small business in southern Minnesota, where I drive marketing strategy and execution.</li>
+                <li><strong>Key Responsibilities:</strong>
+                    <ul>
+                        <li>Control and optimize marketing budgets for maximum ROI</li>
+                        <li>Develop and execute integrated marketing strategies aligned with business goals</li>
+                        <li>Create all marketing materials including digital, print, and social media content</li>
+                        <li>Track and analyze marketing data to inform strategic decisions and improve performance</li>
+                    </ul>
+                </li>
+                <li><strong>Core Competencies:</strong> Strategic planning, creative design, budget management, data analysis, digital marketing, brand development, and team collaboration.</li>
+            </ul>
+        </div>
+
+        <div class="firms-grid">
+            <!-- Firm 1: Colle + McVoy -->
+            <div class="firm-card">
+                <div class="firm-logo">Colle + McVoy</div>
+                <p class="firm-name">Colle + McVoy</p>
+                
+                <div class="firm-contact">
+                    <strong>Address:</strong> 230 9th St S, Minneapolis, MN 55402<br>
+                    <strong>Phone:</strong> (612) 305-6000<br>
+                    <strong>Email:</strong> careers@collemcvoy.com<br>
+                    <strong>Website:</strong> www.collemcvoy.com
+                </div>
+
+                <div class="firm-interest">
+                    <h3>Why I'm Interested</h3>
+                    <p>Colle + McVoy is known for its innovative, data-driven approach to marketing and creative excellence. I'm drawn to their work across diverse industries and their commitment to building meaningful brands. Their collaborative culture and emphasis on strategic thinking align perfectly with my passion for combining data insights with compelling creative solutions. I want to grow with a team that pushes creative boundaries while maintaining accountability to measurable results.</p>
+                </div>
+            </div>
+
+            <!-- Firm 2: Periscope -->
+            <div class="firm-card">
+                <div class="firm-logo">Periscope</div>
+                <p class="firm-name">Periscope</p>
+                
+                <div class="firm-contact">
+                    <strong>Address:</strong> 10 S. 5th St, Suite 600, Minneapolis, MN 55402<br>
+                    <strong>Phone:</strong> (612) 455-2255<br>
+                    <strong>Email:</strong> careers@periscopeagency.com<br>
+                    <strong>Website:</strong> www.periscopeagency.com
+                </div>
+
+                <div class="firm-interest">
+                    <h3>Why I'm Interested</h3>
+                    <p>Periscope stands out for its focus on brand strategy, digital transformation, and creative innovation. Their portfolio showcases work that balances strategic depth with exceptional design, which reflects my own approach to marketing. I admire their commitment to understanding client challenges at a deeper level and crafting solutions that drive real business impact. I'm excited about the opportunity to contribute my design expertise, marketing acumen, and data-driven mindset to a team that values both creativity and measurable outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add 'loaded' class to header after page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.header').classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

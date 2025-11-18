@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Hobbies</title>
+	<style>
+		:root{
+			--bg1:#f0f6ff; --bg2:#fffaf0; --muted:#5d6b7a;
+			--accent1:#ffb86b; --accent2:#6fb3ff; --accent3:#7fd48b;
+			--card:#ffffff;
+		}
+		/* textured layered background */
+		body{
+			font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+			margin:0;
+			color:#0f1724;
+			background-color:var(--bg1);
+			background-image:
+				linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%),
+				repeating-linear-gradient(45deg, rgba(0,0,0,0.01) 0px, rgba(0,0,0,0.01) 1px, transparent 1px, transparent 8px);
+			background-blend-mode:screen;
+		}
+		.container{max-width:980px;margin:3rem auto;padding:0 1rem}
+		.header{text-align:center;margin-bottom:1.5rem}
+		h1{margin:.25rem 0;font-size:1.75rem;letter-spacing:.2px}
+		.small-note{color:var(--muted);font-size:.95rem}
+
+		/* header styles */
+		.header{padding:1rem;background:#ffffff;border-bottom:1px solid rgba(16,24,40,0.1)}
+		.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+		.name{font-weight:700;font-size:1.25rem;color:#0b1720}
+		.navigation ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem}
+		.navigation a{text-decoration:none;color:#0b1720;font-weight:500;font-size:0.95rem;transition:color 0.3s}
+		.navigation a:hover{color:#6fb3ff}
+
+		/* segment styles with colored accent bar and soft texture */
+		.segment{
+			background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+			border-radius:14px;
+			padding:1.5rem 1.5rem 1.25rem 1.25rem;
+			box-shadow:0 8px 30px rgba(20,30,60,0.07);
+			margin-bottom:1.6rem;
+			position:relative;
+			overflow:hidden;
+			border-left:8px solid var(--accent1);
+		}
+		.segment::after{
+			/* subtle paper-like speckle */
+			content:"";position:absolute;inset:0;pointer-events:none;
+			background-image:radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+			background-size:6px 6px;opacity:.6;mix-blend-mode:multiply
+		}
+		.accent-1{border-left-color:var(--accent1)}
+		.accent-2{border-left-color:var(--accent2)}
+		.accent-3{border-left-color:var(--accent3)}
+
+		h2{margin:0 0 .45rem;font-size:1.125rem;color:#0b1720}
+		p{margin:.25rem 0 0;line-height:1.6;color:#263238}
+		/* hobby sections grid */
+		.hobbies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1.5rem}
+		.segment{display:flex;flex-direction:column}
+		/* hobby section images */
+		.hobby-image{width:100%;height:180px;object-fit:cover;border-radius:8px 8px 0 0;margin:0;order:-1}
+		@media (min-width:700px){.segment{padding:2rem}}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="header-content">
+			<div class="name">Mason McCabe</div>
+			<nav class="navigation">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="hobbies.html">Hobbies</a></li>
+					<li><a href="discover.html">Discover UMD</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="career.html">Career</a></li>
+					<li><a href="game.html">Game</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="header">
+			<h1>Hobbies</h1>
+			<p class="small-note">A peak at some of my favorite things.</p>
+		</div>
+
+		<div class="hobbies-grid">
+			<section class="segment accent-1" id="playing-sports">
+				<img src="images/sport1.JPG" alt="Playing Sports" class="hobby-image">
+				<h2>Playing Sports</h2>
+				<p>I grew up surrounded by sports, I played baseball and hockey throughout highschool and I currently play intramural basketball.</p>
+			</section>
+
+			<section class="segment accent-2" id="weightlifting">
+				<img src="images/weights.jpeg" alt="Weightlifting" class="hobby-image">
+				<h2>Weightlifting</h2>
+				<p>This is one of my more recent passions. It is one of my favorite things to push my body to the limits, see improvement, and listen to my favorite songs while working out. I have found that no matter how hard the lift will be I always look forward to it.</p>
+			</section>
+
+			<section class="segment accent-3" id="time-on-the-lake">
+				<img src="images/lake.HEIC" alt="Time on the Lake" class="hobby-image">
+				<h2>Time on the Lake</h2>
+				<p>I love spending time on the lake. Whether I am on a boat or just sitting on the shore I have a great time by the water.</p>
+			</section>
+		</div>
+
+	</div>
+</body>
+</html>

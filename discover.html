@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover UMD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        /* Critical styles to prevent FOUC */
+        body {
+            margin: 0;
+            background-color: #ffffff;
+        }
+        .header {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .header.loaded {
+            opacity: 1;
+        }
+        /* page styles */
+        .discover-container{max-width:900px;margin:3rem auto;padding:0 1rem}
+        .discover-section{background:linear-gradient(180deg,#ffffff,#fbfbff);border-radius:12px;padding:2rem;box-shadow:0 6px 18px rgba(16,24,40,0.06);margin-bottom:1.5rem;border-left:6px solid #6fb3ff}
+        .discover-section h2{margin:0 0 1rem;font-size:1.5rem;color:#0b1720}
+        .discover-section p{margin:0;line-height:1.7;color:#263238;font-size:1rem}
+        .team-credits{text-align:center;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(16,24,40,0.1)}
+        .team-credits p{font-size:0.9rem;color:#6b7280;margin:0}
+        /* video section styling */
+        .video-section{margin:2rem auto;max-width:600px;text-align:center}
+        .mis-video{width:100%;max-width:600px;height:auto;border-radius:8px;box-shadow:0 8px 30px rgba(16,24,40,0.12)}
+        .video-caption{margin:0.75rem 0 0;color:#6b7280;font-size:0.95rem;font-weight:500}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="name">Mason McCabe</div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="discover.html">Discover UMD</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="game.html">Game</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="discover-container">
+        <h1 style="text-align:center;color:#0b1720;margin-bottom:2rem;">Discover UMD</h1>
+
+        <section class="discover-section">
+            <h2>Why I Chose UMD</h2>
+            <p>When it came time to choose a college, the University of Minnesota Duluth stood out to me for its strong sense of community, beautiful lakeside location, and commitment to hands-on learning. I was drawn to the opportunity to be part of a smaller, more connected campus where I could make meaningful relationships with professors and classmates. UMD's emphasis on real-world experience and its collaborative atmosphere aligned perfectly with my values and academic goals. Coming here was one of the best decisions I've made.</p>
+        </section>
+
+        <section class="discover-section">
+            <h2>What I Love About Duluth</h2>
+            <p>Duluth is an incredible place with so much character and natural beauty. The Lake Superior waterfront is breathtaking, offering peaceful escapes and outdoor adventures year-round. Beyond the lake, the city has a vibrant downtown with great restaurants, local businesses, and a welcoming community feel. The people here are genuine and supportive, and there's a real sense of pride in the city. Whether it's hiking the Superior hiking trail, exploring the local art scene, or simply enjoying the views, Duluth offers endless opportunities to grow and explore. I've come to love this city and everything it represents.</p>
+        </section>
+
+        <div class="video-section">
+            <video class="mis-video" controls width="100%">
+                <source src="videos/mis.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="video-caption">Duluth, Minnesota</p>
+        </div>
+
+        <div class="team-credits">
+            <p><strong>Team members:</strong> Jack Thamert, Jenna Lambert, Kyle Meles.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add 'loaded' class to header after page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.header').classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

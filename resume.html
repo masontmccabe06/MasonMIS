@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason's Resume</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #001f3f;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --section-gap: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            z-index: 1000;
+        }
+
+        .home-button:hover {
+            transform: scale(1.05);
+            background-color: #002f5f;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: var(--section-gap);
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section {
+            margin-bottom: var(--section-gap);
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            margin-right: 1rem;
+            transform: rotate(45deg);
+        }
+
+        .experience-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .location {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            margin-bottom: 1rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(0, 31, 63, 0.05);
+            border-radius: 10px;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 31, 63, 0.1);
+        }
+
+        .download-button:hover {
+            background-color: #002f5f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 31, 63, 0.2);
+        }
+
+        .download-button::before {
+            content: "⭳";
+            font-size: 1.2em;
+        }
+
+        .download-text {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .download-section {
+                margin-top: 2rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">Home</a>
+    <div class="container">
+        <header class="header">
+            <h1>Resume</h1>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-card">
+                <h3 class="job-title">Graphic Designer</h3>
+                <div class="company">UMD Sales Club</div>
+                <div class="duration">April 2025 - Present · 7 months</div>
+                <div class="location">Duluth, Minnesota, United States · On-site</div>
+                <p class="description">Creation of professional social media posts for the sales club and the UMD sales summit.</p>
+                <div class="skills-container">
+                    <span class="skill-tag">Graphic Design</span>
+                    <span class="skill-tag">Social Media Marketing</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <h3 class="job-title">Marketing Manager</h3>
+                <div class="company">Nick Slavik Painting & Restoration Company</div>
+                <div class="duration">November 2024 - Present · 1 year</div>
+                <div class="location">New Prague, Minnesota, United States · Remote</div>
+                <p class="description">Advertisement design, web development, social media content construction and posting, management of marketing budgets, and management of marketing activities. Management of door-to-door sales team during summer, including tracking and analyzing results.</p>
+                <div class="skills-container">
+                    <span class="skill-tag">Graphic Design</span>
+                    <span class="skill-tag">Social Media Marketing</span>
+                    <span class="skill-tag">Web Development</span>
+                    <span class="skill-tag">Budget Management</span>
+                    <span class="skill-tag">Team Management</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <h3 class="job-title">Sales Associate</h3>
+                <div class="company">Pure Hockey</div>
+                <div class="duration">November 2023 - January 2025 · 1 year 3 months</div>
+                <div class="location">Burnsville, Minnesota, United States · On-site</div>
+                <p class="description">Professional assistance in hockey equipment sales, product and service information communication, customer complaint handling, and store organization maintenance.</p>
+                <div class="skills-container">
+                    <span class="skill-tag">Organization Skills</span>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Customer Service</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <h3 class="job-title">Outdoor Services</h3>
+                <div class="company">Brackett's Crossing Country Club</div>
+                <div class="duration">May 2023 - August 2024 · 1 year 4 months</div>
+                <div class="location">Lakeville, Minnesota, United States · On-site</div>
+                <p class="description">Professional customer communication and assistance, maintenance of golf carts and clubs, tournament preparation and organization.</p>
+                <div class="skills-container">
+                    <span class="skill-tag">Organization Skills</span>
+                    <span class="skill-tag">Customer Service</span>
+                    <span class="skill-tag">Event Management</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-card">
+                <h3 class="job-title">Marketing & Graphic Design</h3>
+                <div class="company">University of Minnesota Duluth</div>
+                <div class="duration">August 2024 - May 2028</div>
+                <div class="location">Grade: Sophomore</div>
+            </div>
+
+            <div class="education-card">
+                <h3 class="job-title">High School Diploma</h3>
+                <div class="company">Lakeville North High School</div>
+                <div class="duration">September 2020 - June 2024</div>
+                <p class="description">Activities: Varsity Baseball, DECA</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Key Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Budget Management</span>
+                <span class="skill-tag">Online Content Creation</span>
+                <span class="skill-tag">Social Media Marketing</span>
+                <span class="skill-tag">Graphic Design</span>
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Team Management</span>
+                <span class="skill-tag">Customer Service</span>
+                <span class="skill-tag">Organization Skills</span>
+                <span class="skill-tag">Event Management</span>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <p class="download-text">Want a copy for your records? Download the PDF version below</p>
+            <a href="Resume_Mason.pdf" class="download-button" download>
+                Download Resume
+            </a>
+        </section>
+    </div>
+</body>
+</html>
